@@ -1,6 +1,6 @@
 # Atomist 'rug-functions-slack'
 
-[![Build Status](https://travis-ci.com/atomisthq/rug-functions-slack.svg?branch=master)](https://travis-ci.com/atomisthq/rug-functions-slack)
+[![Build Status](https://travis-ci.com/atomisthq/rug-functions-slack.svg?token=iZrpQxJakudjNfb3zxAZ&branch=master)](https://travis-ci.com/atomisthq/rug-functions-slack)
 
 Rug Functions for Slack.
 
