@@ -212,15 +212,23 @@
             <url>https://atomist.jfrog.io/atomist/libs-dev</url>
         </repository>
         <repository>
+            <id>atomist-release</id>
+            <name>Atomisthq Release</name>
+            <url>https://sforzando.artifactoryonline.com/sforzando/libs-release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
     <distributionManagement>
         <repository>
-            <id>public-atomist-release</id>
-            <name>Atomist Release</name>
-            <url>https://atomist.jfrog.io/atomist/libs-release-local</url>
+            <id>atomist-release</id>
+            <name>Atomisthq Release</name>
+            <url>https://sforzando.artifactoryonline.com/sforzando/libs-release-local</url>
         </repository>
     </distributionManagement>
 </project>
