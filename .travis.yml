@@ -29,13 +29,13 @@ notifications:
 cache:
   directories:
   - $HOME/.m2
-before_install:
-- openssl aes-256-cbc -K $encrypted_de282c3465e2_key -iv $encrypted_de282c3465e2_iv
-  -in atomist_sec.gpg.enc -out atomist_sec.gpg -d
 deploy:
   provider: releases
   api_key:
     secure: LfwAthEa2oFq+Gw0W1xBrw8fxix0j/GblnQSD/rQ3FT1LcXLWpqPo5WVuiAekStskvaWWLxpvyplYGEo/6e//7DGai8tvRrUBthGQT8R40cc7vwcyYWRd56T8oeSU5IQgmYZSfTdIETlO06g0RI9yaZAn2IjyGiuM22czIFCgEc2ZzB2fyHcJLF7wWKhZQhqJewBda8xzQEHK6dwBF/YTWccpOl2W0lDM6CpbppvwCssuL+fIlsep84ZQhNOmHb4icXk5AvAD1r7Xp+tOpSd9kFVYMsIhmAVCfsk0C5xczFF695s2g9dYd+RJS2nk3L8usrUjJD/uDlxi1kXMdi6y1V6ZK9p2NBODnUwHfx78TeKhr9s7nob2pZ6DVEEGf2xXjhLzQ/gJq8pphSaJAgy2P/gpuU9CHv53jp5I8d/9CFwJ0vKBHjJjoIoSNnFhf07VMRCx0wu/UNTMDFMGzhu3SzM3B4UhVuZHPfKoCbWdDXrGjqTZ5r0ke1Czdlrf/jpu8Dg92dSh7jk0Ko1OzUOGY5R3x7/er93kVLUNP+C2B1KiUbSip7z2fs7yLV7a19T/oPEUV4ctrJsOsSexocp/hjGgo1TubmfO//luzdxBq53KJ2mVUaf+cpwvfWj1o4yR+f7Td2nVZVR2vf9BfdnQZodiDHiH2ELFfVHC4Ku5go=
   on:
-      tags: true
-      condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+    tags: true
+    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+before_install:
+- openssl aes-256-cbc -K $encrypted_ad4342ef7394_key -iv $encrypted_ad4342ef7394_iv
+  -in atomist_sec.gpg.enc -out atomist_sec.gpg -d
