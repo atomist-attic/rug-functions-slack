@@ -1,0 +1,38 @@
+dist: trusty
+sudo: false
+language: java
+jdk:
+- oraclejdk8
+branches:
+  except:
+  - /\+travis\d+$/
+env:
+  global:
+addons:
+  apt:
+    packages:
+    - openssl
+    - gnupg
+install: true
+script: bash travis-build.bash
+notifications:
+  email: false
+  webhooks:
+    on_success: always
+    on_failure: always
+    on_start: always
+    urls:
+    - https://webhook.atomist.com/travis
+cache:
+  directories:
+  - $HOME/.m2
+deploy:
+  provider: releases
+  api_key:
+    secure: o2eWCxgYYUsvN0w/msEjF14xwBH3qFUOrffhEOh1fgsDHgPO9IutJBVTtfx6LXqx+4S9bm+KjYzgL2Ko8lDzuLKBRBFZ+s7k9CIGW1lLFfA7u1nW/lUhXI25M0LZBEZ0pmjRqRWX42T+VSdugu0Thc2UAJyd/47/h5E6o2tsOnB2Tzz0/sw7hSnPESRk4jTEEUFHZ+7uXKSobKb2pwWiSFOFpiCawNPDtTV0gtucrjjtU7dn28XEQXzAkEekXOmH4QsrtKiFKOGzYMZB3nHHuali6SQ2s3Beb0VgKk5hmtixCQ2A9XD+oTWrHiQFv4PnEANepSgjg9FkZpJuWBmX4c6SPCh8IrKiWD+NgMkR4bHodIv6A56OovUiPpfBlArLdDDefa2LFbk0JA+TTTO4TmcB9DEeRTeevrjbv3Kmth/Wa2ZSaHKMgtXJ/DNillDdTN0V1gv4G29xHkfXz6TUSgbvMOV6Sh7q2G0yJ+kZeZvBXbp3CDKkaqDFAIPf1CWULLnoHf9aWdzb7+zL64G1xiBj1eOtFgINMVsNXCAaBsQQOMZ4ZXajT5nHM3YsC0j2WDnzXxCEvnNNnaQzvnXqR6jlXa7arbw7X0PiBFJGNloprXw9Ifs/GF66yNan2pab7aBJOtS/MHjFloayi6hiG3su2AU9wd9N09F5Digrxt8=
+  on:
+    tags: true
+    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+before_install:
+- openssl aes-256-cbc -K $encrypted_de282c3465e2_key -iv $encrypted_de282c3465e2_iv
+  -in atomist_sec.gpg.enc -out atomist_sec.gpg -d
