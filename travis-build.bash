@@ -51,9 +51,6 @@ function main() {
     if [[ $TRAVIS_BRANCH == master || $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         msg "version is $project_version"
         local mvn_deploy_args
-        if [[ $TRAVIS_BRANCH == master ]]; then
-            mvn_deploy_args=-DaltDeploymentRepository=public-atomist-dev::default::https://atomist.jfrog.io/atomist/libs-dev-local
-        fi
 
         if ! gpg --allow-secret-key-import --import atomist_sec.gpg; then
             err "failed to import gpg key"
