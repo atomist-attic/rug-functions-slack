@@ -1,8 +1,8 @@
-# Atomist 'rug-functions-github'
+# Atomist 'rug-functions-slack'
 
-[![Build Status](https://travis-ci.org/atomist-rugs/rug-functions-github.svg?branch=master)](https://travis-ci.org/atomist-rugs/rug-functions-github)
+[![Build Status](https://travis-ci.com/atomisthq/rug-functions-slack.svg?branch=master)](https://travis-ci.com/atomisthq/rug-functions-slack)
 
-Rug Functions for GitHub.
+Rug Functions for Slack.
 
 ## Developing
 
