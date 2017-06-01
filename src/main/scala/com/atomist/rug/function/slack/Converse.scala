@@ -25,7 +25,7 @@ class Converse
              @Parameter(name = "message") message: String,
              @Parameter(name = "fromUsername") from: String,
              @Parameter(name = "asUsername") as: String,
-             @Secret(name = "token", path = "secret://user?path=slack/legacy-token") token: String): FunctionResponse = {
+             @Secret(name = "token", path = "secret://team?path=slack/legacy-token") token: String): FunctionResponse = {
 
     logger.info(s"Invoking slack-converse with timeout '$timeout', channel '$channelName', matching '$matching'")
 
